@@ -1,101 +1,165 @@
 {
-    "options": [
-      {
-        "id": 1,
-        "type": "paintColor",
-        "name": "Silver",
-        "price": 0
-      },
-      {
-        "id": 2,
-        "type": "paintColor",
-        "name": "Midnight Blue",
-        "price": 500
-      },
-      {
-        "id": 3,
-        "type": "paintColor",
-        "name": "Firebrick Red",
-        "price": 1000
-      },
-      {
-        "id": 4,
-        "type": "paintColor",
-        "name": "Spring Green",
-        "price": 1500
-      },
-      {
-        "id": 5,
-        "type": "interior",
-        "name": "Beige Fabric",
-        "price": 0
-      },
-      {
-        "id": 6,
-        "type": "interior",
-        "name": "Charcoal Fabric",
-        "price": 200
-      },
-      {
-        "id": 7,
-        "type": "interior",
-        "name": "White Leather",
-        "price": 1000
-      },
-      {
-        "id": 8,
-        "type": "interior",
-        "name": "Black Leather",
-        "price": 1200
-      },
-      {
-        "id": 9,
-        "type": "technology",
-        "name": "Basic Package",
-        "price": 0
-      },
-      {
-        "id": 10,
-        "type": "technology",
-        "name": "Navigation Package",
-        "price": 800
-      },
-      {
-        "id": 11,
-        "type": "technology",
-        "name": "Visibility Package",
-        "price": 1200
-      },
-      {
-        "id": 12,
-        "type": "technology",
-        "name": "Ultra Package",
-        "price": 2000
-      },
-      {
-        "id": 13,
-        "type": "wheels",
-        "name": "17-inch Pair Radial",
-        "price": 0
-      },
-      {
-        "id": 14,
-        "type": "wheels",
-        "name": "17-inch Pair Radial Black",
-        "price": 300
-      },
-      {
-        "id": 15,
-        "type": "wheels",
-        "name": "18-inch Pair Spoke Silver",
-        "price": 800
-      },
-      {
-        "id": 16,
-        "type": "wheels",
-        "name": "18-inch Pair Spoke Black",
-        "price": 1000
-      }
-    ],
-    "orders": []
-  }
+  "options": [
+    {
+      "id": "1",
+      "type": "paintColor",
+      "name": "Silver",
+      "price": 0
+    },
+    {
+      "id": "2",
+      "type": "paintColor",
+      "name": "Midnight Blue",
+      "price": 500
+    },
+    {
+      "id": "3",
+      "type": "paintColor",
+      "name": "Firebrick Red",
+      "price": 1000
+    },
+    {
+      "id": "4",
+      "type": "paintColor",
+      "name": "Spring Green",
+      "price": 1500
+    },
+    {
+      "id": "5",
+      "type": "interior",
+      "name": "Beige Fabric",
+      "price": 0
+    },
+    {
+      "id": "6",
+      "type": "interior",
+      "name": "Charcoal Fabric",
+      "price": 200
+    },
+    {
+      "id": "7",
+      "type": "interior",
+      "name": "White Leather",
+      "price": 1000
+    },
+    {
+      "id": "8",
+      "type": "interior",
+      "name": "Black Leather",
+      "price": 1200
+    },
+    {
+      "id": "9",
+      "type": "technology",
+      "name": "Basic Package",
+      "price": 0
+    },
+    {
+      "id": "10",
+      "type": "technology",
+      "name": "Navigation Package",
+      "price": 800
+    },
+    {
+      "id": "11",
+      "type": "technology",
+      "name": "Visibility Package",
+      "price": 1200
+    },
+    {
+      "id": "12",
+      "type": "technology",
+      "name": "Ultra Package",
+      "price": 2000
+    },
+    {
+      "id": "13",
+      "type": "wheels",
+      "name": "17-inch Pair Radial",
+      "price": 0
+    },
+    {
+      "id": "14",
+      "type": "wheels",
+      "name": "17-inch Pair Radial Black",
+      "price": 300
+    },
+    {
+      "id": "15",
+      "type": "wheels",
+      "name": "18-inch Pair Spoke Silver",
+      "price": 800
+    },
+    {
+      "id": "16",
+      "type": "wheels",
+      "name": "18-inch Pair Spoke Black",
+      "price": 1000
+    }
+  ],
+  "orders": [
+    {
+      "id": "8b57",
+      "wheelsId": 15,
+      "technologiesId": 10,
+      "paintsId": 1,
+      "interiorsId": 7
+    },
+    {
+      "id": "b2c5",
+      "wheelsId": 0,
+      "technologiesId": 0,
+      "paintsId": 0,
+      "interiorsId": 0
+    },
+    {
+      "id": "e4ad",
+      "wheelsId": 0,
+      "technologiesId": 0,
+      "paintsId": 0,
+      "interiorsId": 0
+    },
+    {
+      "id": "aa42",
+      "wheelsId": 0,
+      "technologiesId": 0,
+      "paintsId": 0,
+      "interiorsId": 0
+    },
+    {
+      "id": "b6bc",
+      "wheelsId": 0,
+      "technologiesId": 0,
+      "paintsId": 0,
+      "interiorsId": 0
+    },
+    {
+      "id": "82b4",
+      "wheelsId": 0,
+      "technologiesId": 0,
+      "paintsId": 0,
+      "interiorsId": 0
+    },
+    {
+      "id": "3a17",
+      "wheelsId": 0,
+      "technologiesId": 0,
+      "paintsId": 0,
+      "interiorsId": 0
+    },
+    {
+      "id": "5866",
+      "wheelsId": 0,
+      "technologiesId": 0,
+      "paintsId": 0,
+      "interiorsId": 0
+    },
+    {
+      "id": "25d6",
+      "wheelsId": 0,
+      "technologiesId": 0,
+      "paintsId": 0,
+      "interiorsId": 0
+    }
+  ]
+}

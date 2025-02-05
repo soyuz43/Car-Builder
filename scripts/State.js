@@ -36,8 +36,8 @@ export const setInteriors = (value) => {
 };
 
 export const placeOrder = (newOrder) => {
+    console.log("Placing order in state:", newOrder);
     orders.push(newOrder);
-    console.log(`Order completed: ${JSON.stringify(newOrder)}`);
     document.dispatchEvent(new CustomEvent('stateChanged'));
 };
 
