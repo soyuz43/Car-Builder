@@ -2,9 +2,10 @@
 import { getOrders } from './State.js';
 
 const CompletedOrders = async () => {
-    console.log('Completed orders function started...');
+    console.log('CompletedOrders function started...');
     const orders = await getOrders();
-    console.log(`Got ${orders.length} orders...`);
+    console.log(`Orders fetched from state: ${JSON.stringify(orders)}`);
+
     const html = orders.map((order) => {
         return `
             <div>
@@ -17,7 +18,7 @@ const CompletedOrders = async () => {
         `;
     }).join('');
 
-    console.log('HTML generated. Returning...');
+    console.log('HTML generated for completed orders:', html);
     return html;
 };
 
