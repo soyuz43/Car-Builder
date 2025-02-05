@@ -1,5 +1,5 @@
 // scripts/Technologies.js
-const Technologies = async () => {
+export const Technologies = async () => {
     const response = await fetch('http://localhost:8088/options');
     const data = await response.json();
     const technologiesOptions = data.filter(option => option.type === 'technology');
@@ -14,4 +14,3 @@ const Technologies = async () => {
     return html;
 };
 
-export default Technologies;

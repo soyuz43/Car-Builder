@@ -1,5 +1,5 @@
 // scripts/Paints.js
-const Paints = async () => {
+export const Paints = async () => {
     const response = await fetch('http://localhost:8088/options');
     const data = await response.json();
     const paintsOptions = data.filter(option => option.type === 'paintColor');
@@ -14,4 +14,3 @@ const Paints = async () => {
     return html;
 };
 
-export default Paints;

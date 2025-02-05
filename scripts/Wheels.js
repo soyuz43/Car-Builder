@@ -1,5 +1,5 @@
 // scripts/Wheels.js
-const Wheels = async () => {
+export const Wheels = async () => {
     const response = await fetch('http://localhost:8088/options');
     const data = await response.json();
     const wheelsOptions = data.filter(option => option.type === 'wheels');
@@ -13,5 +13,3 @@ const Wheels = async () => {
 
     return html;
 };
-
-export default Wheels;

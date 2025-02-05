@@ -1,25 +1,49 @@
 // scripts/CompletedOrders.js
 import { getOrders } from './State.js';
 
-const CompletedOrders = async () => {
-    console.log('CompletedOrders function started...');
-    const orders = await getOrders();
-    console.log(`Orders fetched from state: ${JSON.stringify(orders)}`);
+// Retrieve options from the database
+const getOptions = async () => {
+  const response = await fetch('http://localhost:8088/options');
+  const options = await response.json();
+  const optionsObject = {};
 
-    const html = orders.map((order) => {
-        return `
-            <div>
-                <h2>Order #${order.id}</h2>
-                <p>Wheels: ${order.wheelsId}</p>
-                <p>Technologies: ${order.technologiesId}</p>
-                <p>Paints: ${order.paintsId}</p>
-                <p>Interiors: ${order.interiorsId}</p>
-            </div>
-        `;
-    }).join('');
+  options.forEach((option) => {
+    optionsObject[option.id] = option;
+  });
 
-    console.log('HTML generated for completed orders:', html);
-    return html;
+  return optionsObject;
 };
 
-export default CompletedOrders;
+export const CompletedOrders = async () => {
+  // Retrieve orders from the database
+  const response = await fetch('http://localhost:8088/orders');
+  const ordersFromDatabase = await response.json();
+
+  // Combine orders from the database with orders in state
+  const allOrders = [...getOrders(), ...ordersFromDatabase];
+
+  // Retrieve options from the database
+  const options = await getOptions();
+
+  const html = allOrders.map((order) => {
+    // Calculate the total price for the order
+    const wheelsPrice = options[order.wheelsId] ? options[order.wheelsId].price : 0;
+    const technologiesPrice = options[order.technologiesId] ? options[order.technologiesId].price : 0;
+    const paintsPrice = options[order.paintsId] ? options[order.paintsId].price : 0;
+    const interiorsPrice = options[order.interiorsId] ? options[order.interiorsId].price : 0;
+    const totalPrice = wheelsPrice + technologiesPrice + paintsPrice + interiorsPrice;
+
+    return `
+      <div>
+        <h2>Order #${order.id}</h2>
+        <p>Wheels: ${options[order.wheelsId] ? options[order.wheelsId].name : 'Unknown'}</p>
+        <p>Technologies: ${options[order.technologiesId] ? options[order.technologiesId].name : 'Unknown'}</p>
+        <p>Paints: ${options[order.paintsId] ? options[order.paintsId].name : 'Unknown'}</p>
+        <p>Interiors: ${options[order.interiorsId] ? options[order.interiorsId].name : 'Unknown'}</p>
+        <p>Total Price: $${totalPrice}</p>
+      </div>
+    `;
+  }).join('');
+
+  return html;
+};
