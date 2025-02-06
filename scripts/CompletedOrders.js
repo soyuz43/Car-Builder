@@ -19,13 +19,10 @@ export const CompletedOrders = async () => {
   const response = await fetch('http://localhost:8088/orders');
   const ordersFromDatabase = await response.json();
 
-  // Combine orders from the database with orders in state
-  const allOrders = [...getOrders(), ...ordersFromDatabase];
-
   // Retrieve options from the database
   const options = await getOptions();
 
-  const html = allOrders.map((order) => {
+  const html = ordersFromDatabase.map((order) => {
     // Calculate the total price for the order
     const wheelsPrice = options[order.wheelsId] ? options[order.wheelsId].price : 0;
     const technologiesPrice = options[order.technologiesId] ? options[order.technologiesId].price : 0;
